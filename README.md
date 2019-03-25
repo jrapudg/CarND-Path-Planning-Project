@@ -20,8 +20,11 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 ## Model Documentation
 In order to code the model for path planning, I followed the suggestions made by David Silver and Aaron Brown from Udacity at the Q&A session. The strategy is based in create a couple of points pretty far spaced (e.g., 30 meters, 60 meters, 90 meters, etc.) fit by a spline, and then, points inside that spline are taken. You can see this code from line 236 to 350 on main.cpp file.
 
+![alt text](./images/go_straight.png "go straight")
+
 The car reduces its speed when there is a car in front of it at 30 meters and speed up when there is no car ahead. Then a flag 'too close' is set to true and the vehicle is allowed to check if there is a gap for changing lanes. It is done by checking the predicted trajectories of all the cars on the lanes aside to avoid collision. If this cars will be in range more than 30 meters, then it is safe to change lanes. The lane to the right of the current lane is first checked because it is usually the how humans change lanes. This is due to driving rules. You can see this code from line 115 to 234 on the main.cpp file.
 
+![alt text](./images/change_lane.png "Change Lane")
 
 
 ## Basic Build Instructions
