@@ -128,7 +128,7 @@ int main() {
 
               check_car_s += ((double)prev_size*0.02*check_speed);
               //Check s values greater than mine and s highway_map
-              if((check_car_s > car_s) && ((check_car_s-car_s) <20 ))
+              if((check_car_s > car_s) && ((check_car_s-car_s) <30 ))
               {
                 // Do some logic here, lower reference velocity so we dont crash into the car in front of us, could
                 //also flag to try to change lanes.
@@ -173,7 +173,7 @@ int main() {
 
                 check_car_s_change += ((double)prev_size*0.02*check_speed_change);
                 //Check s values greater than mine and s highway_map
-                if(abs(check_car_s_change-car_s)< 20)
+                if(abs(check_car_s_change-car_s)< 35)
                 {
                   obstacles = true;
                   //break;
@@ -200,7 +200,7 @@ int main() {
 
                 check_car_s_change += ((double)prev_size*0.02*check_speed_change);
                 //Check s values greater than mine and s highway_map
-                if(abs(check_car_s_change-car_s)< 20)
+                if(abs(check_car_s_change-car_s)< 35)
                 {
                   obstacles_izq = true;
                 }
@@ -215,14 +215,14 @@ int main() {
 
                 check_car_s_change += ((double)prev_size*0.02*check_speed_change);
                 //Check s values greater than mine and s highway_map
-                if(abs(check_car_s_change-car_s)< 20)
+                if(abs(check_car_s_change-car_s)< 35)
                 {
                   obstacles_der = true;
                 }
               }
-              if (obstacles_der && obstacles_izq){
+              //if (obstacles_der && obstacles_izq){
                 //break;
-              }
+              //}
             }
             if (!obstacles_izq){
               lane = next_lane_izq;
